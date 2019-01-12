@@ -2,8 +2,9 @@
 
 1. [Descripción proyecto](#descripción-proyecto)
     1. [Enunciado prueba de código](#enunciado-prueba-de-código)
-2. [Documentación API REST](#documentación-api-rest)
-3. [Decisiones de diseño](#decisiones-de-diseño)
+2. [Documentación base de datos MySQL](#documentación-base-de-datos-mysql)
+3. [Documentación API REST](#documentación-api-rest)
+4. [Decisiones de diseño](#decisiones-de-diseño)
     1. [Tecnología](#tecnología)
     2. [Arquitectura](#arquitectura)
 
@@ -22,7 +23,26 @@ Implementa un pequeño sistema que se componga de:
 * - [x] No será necesario un sistema de usuarios ni roles.
 * - [x] Bonus: Supongamos que un cocinero puede realizar cambios sobre los ingredientes de un plato. Diseña y, si puedes, implementa un sistema para que quede un registro de cambios sobre los platos.
 
+## Documentación base de datos MySQL
+
 ## Documentación API REST
+
+
+* #### Título:
+    Obtener la lista de alérgenos de un plato
+* #### Ruta
+	/obtenerAlergenosDePlato/{nombrePlato}
+* #### Método
+	GET
+* #### Parametros URL
+	* Obligatorios
+	* Opcionales
+* #### Parametros de datos POST
+	* Obligatorios
+	* Opcionales
+* #### Respuesta satisfactoria
+* #### Respuestas de error
+* #### Ejemplo de uso
 
 ## Decisiones de diseño
 
