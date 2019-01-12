@@ -45,13 +45,40 @@ Implementa un pequeño sistema que se componga de:
 	* Opcionales
 * #### Respuesta satisfactoria
 	* Código: 200
-	* Contenido: 
+	* Contenido: Lista de alérgenos en formato JSON
+
+		_Ejemplo_: ["pescado","gluten"]
 * #### Respuestas de error
 	* Código: 400
-	* Contenido: Causa del error
+	* Contenido: {"errores":{"Nombre":["Causa del error"]}}
+	* Causas de error:
+		* El atributo nombre es necesario
+		* El atributo nombre no existe en la base de datos
+		* El atributo nombre no es un string
 		
 		
 * #### Ejemplo de uso
+	* Llamada
+		```
+		GET localhost:8000/api/obtenerAlergenosDePlato?nombre=merluza a las 3 salsas
+		```
+	
+	* Resultado
+		```
+		[
+		    "pescado",
+		    "crustáceos",
+		    "sésamo",
+		    "frutos secos",
+		    "gluten",
+		    "leche",
+		    "mostaza",
+		    "soja",
+		    "sulfitos"
+		]
+		```
+
+	
 
 ## Decisiones de diseño
 
