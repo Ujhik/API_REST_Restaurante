@@ -27,9 +27,10 @@ Implementa un pequeño sistema que se componga de:
 
 ## Documentación API REST
 
+1. [Obtener la lista de alérgenos de un plato](#obtener-la-lista-de-alérgenos-de-un-plato)
 
-* #### Título:
-    Obtener la lista de alérgenos de un plato
+* ### Obtener la lista de alérgenos de un plato
+    
 * #### Ruta
 	/api/obtenerAlergenosDePlato
 * #### Método
