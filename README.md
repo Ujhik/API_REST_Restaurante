@@ -124,20 +124,20 @@ Implementa un pequeño sistema que se componga de:
 * ### Dar de alta un alérgeno
     
 * #### Ruta
-	/api/obtenerAlergenosDePlato
+	/api/altaAlergeno
 * #### Método
-	GET
+	PUT
 * #### Parametros URL o POST
 	* Obligatorios
 		* nombre=[string]
 		
-			_Ejemplo:_ nombre=Merluza a las 3 salsas
+			_Ejemplo:_ nombre=lactosa
 	* Opcionales
 * #### Respuesta satisfactoria
 	* Código: 200
-	* Contenido: Lista de alérgenos en formato JSON
+	* Contenido: Nombre del alérgeno dado de alta en formato JSON
 
-		_Ejemplo_: ["pescado","gluten"]
+		_Ejemplo_: {"nombre": "lactosa"}
 * #### Respuestas de error
 	* Código: 400
 	* Contenido: {"errores":{"nombre":["Causa del error"]}}
@@ -150,22 +150,14 @@ Implementa un pequeño sistema que se componga de:
 * #### Ejemplo de uso
 	* Llamada
 		```
-		GET localhost:8000/api/obtenerAlergenosDePlato?nombre=merluza a las 3 salsas
+		GET localhost:8000/api/altaAlergeno?nombre=fructosa
 		```
 	
 	* Resultado
 		```
-		[
-		    "pescado",
-		    "crustáceos",
-		    "sésamo",
-		    "frutos secos",
-		    "gluten",
-		    "leche",
-		    "mostaza",
-		    "soja",
-		    "sulfitos"
-		]
+		{
+		    "nombre": "fructosa"
+		}
 		```
 
 * ### Dar de alta un ingrediente
