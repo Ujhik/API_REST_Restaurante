@@ -31,17 +31,26 @@ Implementa un pequeño sistema que se componga de:
 * #### Título:
     Obtener la lista de alérgenos de un plato
 * #### Ruta
-	/obtenerAlergenosDePlato/{nombrePlato}
+	/api/obtenerAlergenosDePlato
 * #### Método
 	GET
 * #### Parametros URL
 	* Obligatorios
+		* Nombre=[string]
+		
+			_Ejemplo:_ Nombre=Merluza a las 3 salsas
 	* Opcionales
 * #### Parametros de datos POST
 	* Obligatorios
 	* Opcionales
 * #### Respuesta satisfactoria
+	* Código: 200
+	* Contenido: 
 * #### Respuestas de error
+	* Código: 400
+	* Contenido: Causa del error
+		
+		
 * #### Ejemplo de uso
 
 ## Decisiones de diseño
