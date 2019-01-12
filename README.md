@@ -28,6 +28,11 @@ Implementa un pequeño sistema que se componga de:
 ## Documentación API REST
 
 1. [Obtener la lista de alérgenos de un plato](#obtener-la-lista-de-alérgenos-de-un-plato)
+2. [Obtener la lista de platos de un alérgeno](#obtener-la-lista-de-platos-de-un-alérgeno)
+3. [Dar de alta un alérgeno](#dar-de-alta-un-alérgeno)
+4. [Dar de alta un ingrediente](#dar-de-alta-un-ingrediente)
+5. [Dar de alta un plato](#dar-de-alta-un-plato)
+6. [Modificar los ingredientes de un plato](#modificar-los-ingredientes-de-un-plato)
 
 * ### Obtener la lista de alérgenos de un plato
     
@@ -79,6 +84,255 @@ Implementa un pequeño sistema que se componga de:
 		]
 		```
 
+* ### Obtener la lista de platos de un alérgeno
+    
+* #### Ruta
+	/api/obtenerAlergenosDePlato
+* #### Método
+	GET
+* #### Parametros URL
+	* Obligatorios
+		* Nombre=[string]
+		
+			_Ejemplo:_ Nombre=Merluza a las 3 salsas
+	* Opcionales
+* #### Parametros de datos POST
+	* Obligatorios
+	* Opcionales
+* #### Respuesta satisfactoria
+	* Código: 200
+	* Contenido: Lista de alérgenos en formato JSON
+
+		_Ejemplo_: ["pescado","gluten"]
+* #### Respuestas de error
+	* Código: 400
+	* Contenido: {"errores":{"Nombre":["Causa del error"]}}
+	* Causas de error:
+		* El atributo nombre es necesario
+		* El atributo nombre no existe en la base de datos
+		* El atributo nombre no es un string
+		
+		
+* #### Ejemplo de uso
+	* Llamada
+		```
+		GET localhost:8000/api/obtenerAlergenosDePlato?nombre=merluza a las 3 salsas
+		```
+	
+	* Resultado
+		```
+		[
+		    "pescado",
+		    "crustáceos",
+		    "sésamo",
+		    "frutos secos",
+		    "gluten",
+		    "leche",
+		    "mostaza",
+		    "soja",
+		    "sulfitos"
+		]
+		```
+
+* ### Dar de alta un alérgeno
+    
+* #### Ruta
+	/api/obtenerAlergenosDePlato
+* #### Método
+	GET
+* #### Parametros URL
+	* Obligatorios
+		* Nombre=[string]
+		
+			_Ejemplo:_ Nombre=Merluza a las 3 salsas
+	* Opcionales
+* #### Parametros de datos POST
+	* Obligatorios
+	* Opcionales
+* #### Respuesta satisfactoria
+	* Código: 200
+	* Contenido: Lista de alérgenos en formato JSON
+
+		_Ejemplo_: ["pescado","gluten"]
+* #### Respuestas de error
+	* Código: 400
+	* Contenido: {"errores":{"Nombre":["Causa del error"]}}
+	* Causas de error:
+		* El atributo nombre es necesario
+		* El atributo nombre no existe en la base de datos
+		* El atributo nombre no es un string
+		
+		
+* #### Ejemplo de uso
+	* Llamada
+		```
+		GET localhost:8000/api/obtenerAlergenosDePlato?nombre=merluza a las 3 salsas
+		```
+	
+	* Resultado
+		```
+		[
+		    "pescado",
+		    "crustáceos",
+		    "sésamo",
+		    "frutos secos",
+		    "gluten",
+		    "leche",
+		    "mostaza",
+		    "soja",
+		    "sulfitos"
+		]
+		```
+
+* ### Dar de alta un ingrediente
+    
+* #### Ruta
+	/api/obtenerAlergenosDePlato
+* #### Método
+	GET
+* #### Parametros URL
+	* Obligatorios
+		* Nombre=[string]
+		
+			_Ejemplo:_ Nombre=Merluza a las 3 salsas
+	* Opcionales
+* #### Parametros de datos POST
+	* Obligatorios
+	* Opcionales
+* #### Respuesta satisfactoria
+	* Código: 200
+	* Contenido: Lista de alérgenos en formato JSON
+
+		_Ejemplo_: ["pescado","gluten"]
+* #### Respuestas de error
+	* Código: 400
+	* Contenido: {"errores":{"Nombre":["Causa del error"]}}
+	* Causas de error:
+		* El atributo nombre es necesario
+		* El atributo nombre no existe en la base de datos
+		* El atributo nombre no es un string
+		
+		
+* #### Ejemplo de uso
+	* Llamada
+		```
+		GET localhost:8000/api/obtenerAlergenosDePlato?nombre=merluza a las 3 salsas
+		```
+	
+	* Resultado
+		```
+		[
+		    "pescado",
+		    "crustáceos",
+		    "sésamo",
+		    "frutos secos",
+		    "gluten",
+		    "leche",
+		    "mostaza",
+		    "soja",
+		    "sulfitos"
+		]
+		```
+
+* ### Dar de alta un plato
+    
+* #### Ruta
+	/api/obtenerAlergenosDePlato
+* #### Método
+	GET
+* #### Parametros URL
+	* Obligatorios
+		* Nombre=[string]
+		
+			_Ejemplo:_ Nombre=Merluza a las 3 salsas
+	* Opcionales
+* #### Parametros de datos POST
+	* Obligatorios
+	* Opcionales
+* #### Respuesta satisfactoria
+	* Código: 200
+	* Contenido: Lista de alérgenos en formato JSON
+
+		_Ejemplo_: ["pescado","gluten"]
+* #### Respuestas de error
+	* Código: 400
+	* Contenido: {"errores":{"Nombre":["Causa del error"]}}
+	* Causas de error:
+		* El atributo nombre es necesario
+		* El atributo nombre no existe en la base de datos
+		* El atributo nombre no es un string
+		
+		
+* #### Ejemplo de uso
+	* Llamada
+		```
+		GET localhost:8000/api/obtenerAlergenosDePlato?nombre=merluza a las 3 salsas
+		```
+	
+	* Resultado
+		```
+		[
+		    "pescado",
+		    "crustáceos",
+		    "sésamo",
+		    "frutos secos",
+		    "gluten",
+		    "leche",
+		    "mostaza",
+		    "soja",
+		    "sulfitos"
+		]
+		```
+		
+* ### Modificar los ingredientes de un plato
+    
+* #### Ruta
+	/api/obtenerAlergenosDePlato
+* #### Método
+	GET
+* #### Parametros URL
+	* Obligatorios
+		* Nombre=[string]
+		
+			_Ejemplo:_ Nombre=Merluza a las 3 salsas
+	* Opcionales
+* #### Parametros de datos POST
+	* Obligatorios
+	* Opcionales
+* #### Respuesta satisfactoria
+	* Código: 200
+	* Contenido: Lista de alérgenos en formato JSON
+
+		_Ejemplo_: ["pescado","gluten"]
+* #### Respuestas de error
+	* Código: 400
+	* Contenido: {"errores":{"Nombre":["Causa del error"]}}
+	* Causas de error:
+		* El atributo nombre es necesario
+		* El atributo nombre no existe en la base de datos
+		* El atributo nombre no es un string
+		
+		
+* #### Ejemplo de uso
+	* Llamada
+		```
+		GET localhost:8000/api/obtenerAlergenosDePlato?nombre=merluza a las 3 salsas
+		```
+	
+	* Resultado
+		```
+		[
+		    "pescado",
+		    "crustáceos",
+		    "sésamo",
+		    "frutos secos",
+		    "gluten",
+		    "leche",
+		    "mostaza",
+		    "soja",
+		    "sulfitos"
+		]
+		```
 	
 
 ## Decisiones de diseño
