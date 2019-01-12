@@ -171,18 +171,21 @@ Implementa un pequeño sistema que se componga de:
 * ### Dar de alta un ingrediente
     
 * #### Ruta
-	/api/obtenerAlergenosDePlato
+	/api/altaIngrediente
 * #### Método
-	GET
+	PUT
 * #### Parametros URL o POST
 	* Obligatorios
 		* nombre=[string]
 		
 			_Ejemplo:_ nombre=Merluza a las 3 salsas
 	* Opcionales
+		* alergenos=[string1,...,stringN]
+
+			_Ejemplo:_ alergenos[0]=leche&alergenos[1]=huevo
 * #### Respuesta satisfactoria
-	* Código: 200
-	* Contenido: Lista de alérgenos en formato JSON
+	* Código: 201
+	* Contenido: Nombre de ingrediente y alérgenos en formato JSON
 
 		_Ejemplo_: ["pescado","gluten"]
 * #### Respuestas de error
@@ -197,22 +200,17 @@ Implementa un pequeño sistema que se componga de:
 * #### Ejemplo de uso
 	* Llamada
 		```
-		GET localhost:8000/api/obtenerAlergenosDePlato?nombre=merluza a las 3 salsas
+		PUT localhost:8000/api/altaIngrediente?nombre=nueces&alergenos[0]=frutos secos
 		```
 	
 	* Resultado
 		```
-		[
-		    "pescado",
-		    "crustáceos",
-		    "sésamo",
-		    "frutos secos",
-		    "gluten",
-		    "leche",
-		    "mostaza",
-		    "soja",
-		    "sulfitos"
-		]
+		{
+		    "nombre": "nueces",
+		    "alergenos": [
+			"frutos secos"
+		    ]
+		}
 		```
 
 * ### Dar de alta un plato
@@ -248,7 +246,7 @@ Implementa un pequeño sistema que se componga de:
 * #### Ejemplo de uso
 	* Llamada
 		```
-		GET localhost:8000/api/altaPlato?nombre=puré de la casa&ingredientes[0]=patatas&ingredientes[1]=merluza
+		PUT localhost:8000/api/altaPlato?nombre=puré de la casa&ingredientes[0]=patatas&ingredientes[1]=merluza
 		```
 	
 	* Resultado
