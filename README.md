@@ -255,20 +255,25 @@ Implementa un pequeño sistema que se componga de:
 * ### Modificar los ingredientes de un plato
     
 * #### Ruta
-	/api/obtenerAlergenosDePlato
+	/api/modificarIngredientesDePlato
 * #### Método
-	GET
+	POST
 * #### Parametros URL o POST
 	* Obligatorios
 		* nombre=[string]
 		
 			_Ejemplo:_ nombre=Merluza a las 3 salsas
+			
+		* ingredientes=[string1,...,stringN]
+			
+			_Ejemplo:_ ingrediente[0]=patatas&ingrediente[1]=gambas&ingrediente[2]=merluza
+		
 	* Opcionales
 * #### Respuesta satisfactoria
 	* Código: 200
 	* Contenido: Lista de alérgenos en formato JSON
 
-		_Ejemplo_: ["pescado","gluten"]
+		_Ejemplo_: {"nombre":"patatas cocidas","ingredientes":["tomate", "patatas"]}
 * #### Respuestas de error
 	* Código: 400
 	* Contenido: {"errores":{"nombre":["Causa del error"]}}
@@ -281,22 +286,20 @@ Implementa un pequeño sistema que se componga de:
 * #### Ejemplo de uso
 	* Llamada
 		```
-		GET localhost:8000/api/obtenerAlergenosDePlato?nombre=merluza a las 3 salsas
+		GET localhost:8000/api/modificarIngredientesDePlato?nombre=merluza a las 3 salsas&ingredientes[0]=salsa vino&ingredientes[1]=merluza&ingredientes[2]=salsa gamba&ingredientes[3]=salsa queso
 		```
 	
 	* Resultado
 		```
-		[
-		    "pescado",
-		    "crustáceos",
-		    "sésamo",
-		    "frutos secos",
-		    "gluten",
-		    "leche",
-		    "mostaza",
-		    "soja",
-		    "sulfitos"
-		]
+		{
+		    "nombre": "merluza a las 3 salsas",
+		    "ingredientes": [
+			"salsa vino",
+			"merluza",
+			"salsa gamba",
+			"salsa queso"
+		    ]
+		}
 		```
 	
 
