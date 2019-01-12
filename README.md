@@ -42,7 +42,7 @@ Implementa un pequeño sistema que se componga de:
 	GET
 * #### Parametros URL
 	* Obligatorios
-		* Nombre=[string]
+		* Nombre=[string] : El nombre del plato del que se obtendrán sus alérgenos.
 		
 			_Ejemplo:_ Nombre=Merluza a las 3 salsas
 	* Opcionales
@@ -51,7 +51,7 @@ Implementa un pequeño sistema que se componga de:
 	* Opcionales
 * #### Respuesta satisfactoria
 	* Código: 200
-	* Contenido: Lista de alérgenos en formato JSON
+	* Contenido: Lista de alérgenos en formato JSON o lista vacía.
 
 		_Ejemplo_: ["pescado","gluten"]
 * #### Respuestas de error
@@ -87,12 +87,12 @@ Implementa un pequeño sistema que se componga de:
 * ### Obtener la lista de platos de un alérgeno
     
 * #### Ruta
-	/api/obtenerAlergenosDePlato
+	/api/obtenerPlatosDeAlergeno
 * #### Método
 	GET
 * #### Parametros URL
 	* Obligatorios
-		* Nombre=[string]
+		* Nombre=[string] : El nombre del plato del que se obtendrán sus alérgenos.
 		
 			_Ejemplo:_ Nombre=Merluza a las 3 salsas
 	* Opcionales
@@ -101,9 +101,9 @@ Implementa un pequeño sistema que se componga de:
 	* Opcionales
 * #### Respuesta satisfactoria
 	* Código: 200
-	* Contenido: Lista de alérgenos en formato JSON
+	* Contenido: Lista de platos en formato JSON o lista vacía.
 
-		_Ejemplo_: ["pescado","gluten"]
+		_Ejemplo_: ["merluza a las 3 salsas","tosta de tomate"]
 * #### Respuestas de error
 	* Código: 400
 	* Contenido: {"errores":{"Nombre":["Causa del error"]}}
@@ -112,25 +112,18 @@ Implementa un pequeño sistema que se componga de:
 		* El atributo nombre no existe en la base de datos
 		* El atributo nombre no es un string
 		
-		
 * #### Ejemplo de uso
 	* Llamada
 		```
-		GET localhost:8000/api/obtenerAlergenosDePlato?nombre=merluza a las 3 salsas
+		GET localhost:8000/api/obtenerPlatosDeAlergeno?nombre=leche
 		```
 	
 	* Resultado
 		```
 		[
-		    "pescado",
-		    "crustáceos",
-		    "sésamo",
-		    "frutos secos",
-		    "gluten",
-		    "leche",
-		    "mostaza",
-		    "soja",
-		    "sulfitos"
+		    "gambas al roquefort",
+		    "merluza a las 3 salsas",
+		    "revuelto de gambas con merluza"
 		]
 		```
 
