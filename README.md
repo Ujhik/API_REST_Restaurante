@@ -40,14 +40,11 @@ Implementa un pequeño sistema que se componga de:
 	/api/obtenerAlergenosDePlato
 * #### Método
 	GET
-* #### Parametros URL
+* #### Parametros URL o POST
 	* Obligatorios
-		* Nombre=[string] : El nombre del plato del que se obtendrán sus alérgenos.
+		* nombre=[string] : El nombre del plato del que se obtendrán sus alérgenos.
 		
-			_Ejemplo:_ Nombre=Merluza a las 3 salsas
-	* Opcionales
-* #### Parametros de datos POST
-	* Obligatorios
+			_Ejemplo:_ nombre=Merluza a las 3 salsas
 	* Opcionales
 * #### Respuesta satisfactoria
 	* Código: 200
@@ -56,7 +53,7 @@ Implementa un pequeño sistema que se componga de:
 		_Ejemplo_: ["pescado","gluten"]
 * #### Respuestas de error
 	* Código: 400
-	* Contenido: {"errores":{"Nombre":["Causa del error"]}}
+	* Contenido: {"errores":{"nombre":["Causa del error"]}}
 	* Causas de error:
 		* El atributo nombre es necesario
 		* El atributo nombre no existe en la base de datos
@@ -90,14 +87,11 @@ Implementa un pequeño sistema que se componga de:
 	/api/obtenerPlatosDeAlergeno
 * #### Método
 	GET
-* #### Parametros URL
+* #### Parametros URL o POST
 	* Obligatorios
-		* Nombre=[string] : El nombre del plato del que se obtendrán sus alérgenos.
+		* nombre=[string] : El nombre del plato del que se obtendrán sus alérgenos.
 		
-			_Ejemplo:_ Nombre=Merluza a las 3 salsas
-	* Opcionales
-* #### Parametros de datos POST
-	* Obligatorios
+			_Ejemplo:_ nombre=Merluza a las 3 salsas
 	* Opcionales
 * #### Respuesta satisfactoria
 	* Código: 200
@@ -106,7 +100,7 @@ Implementa un pequeño sistema que se componga de:
 		_Ejemplo_: ["merluza a las 3 salsas","tosta de tomate"]
 * #### Respuestas de error
 	* Código: 400
-	* Contenido: {"errores":{"Nombre":["Causa del error"]}}
+	* Contenido: {"errores":{"nombre":["Causa del error"]}}
 	* Causas de error:
 		* El atributo nombre es necesario
 		* El atributo nombre no existe en la base de datos
@@ -133,14 +127,11 @@ Implementa un pequeño sistema que se componga de:
 	/api/obtenerAlergenosDePlato
 * #### Método
 	GET
-* #### Parametros URL
+* #### Parametros URL o POST
 	* Obligatorios
-		* Nombre=[string]
+		* nombre=[string]
 		
-			_Ejemplo:_ Nombre=Merluza a las 3 salsas
-	* Opcionales
-* #### Parametros de datos POST
-	* Obligatorios
+			_Ejemplo:_ nombre=Merluza a las 3 salsas
 	* Opcionales
 * #### Respuesta satisfactoria
 	* Código: 200
@@ -149,7 +140,7 @@ Implementa un pequeño sistema que se componga de:
 		_Ejemplo_: ["pescado","gluten"]
 * #### Respuestas de error
 	* Código: 400
-	* Contenido: {"errores":{"Nombre":["Causa del error"]}}
+	* Contenido: {"errores":{"nombre":["Causa del error"]}}
 	* Causas de error:
 		* El atributo nombre es necesario
 		* El atributo nombre no existe en la base de datos
@@ -183,14 +174,11 @@ Implementa un pequeño sistema que se componga de:
 	/api/obtenerAlergenosDePlato
 * #### Método
 	GET
-* #### Parametros URL
+* #### Parametros URL o POST
 	* Obligatorios
-		* Nombre=[string]
+		* nombre=[string]
 		
-			_Ejemplo:_ Nombre=Merluza a las 3 salsas
-	* Opcionales
-* #### Parametros de datos POST
-	* Obligatorios
+			_Ejemplo:_ nombre=Merluza a las 3 salsas
 	* Opcionales
 * #### Respuesta satisfactoria
 	* Código: 200
@@ -199,7 +187,7 @@ Implementa un pequeño sistema que se componga de:
 		_Ejemplo_: ["pescado","gluten"]
 * #### Respuestas de error
 	* Código: 400
-	* Contenido: {"errores":{"Nombre":["Causa del error"]}}
+	* Contenido: {"errores":{"nombre":["Causa del error"]}}
 	* Causas de error:
 		* El atributo nombre es necesario
 		* El atributo nombre no existe en la base de datos
@@ -230,51 +218,48 @@ Implementa un pequeño sistema que se componga de:
 * ### Dar de alta un plato
     
 * #### Ruta
-	/api/obtenerAlergenosDePlato
+	/api/altaPlato
 * #### Método
-	GET
-* #### Parametros URL
+	PUT
+* #### Parametros URL o POST
 	* Obligatorios
-		* Nombre=[string]
+		* nombre=[string]
 		
-			_Ejemplo:_ Nombre=Merluza a las 3 salsas
-	* Opcionales
-* #### Parametros de datos POST
-	* Obligatorios
+			_Ejemplo:_ nombre=Pudin
+		* ingredientes=[string1,...,stringN]
+			
+			_Ejemplo:_ ingrediente[0]=patatas&ingrediente[1]=gambas
 	* Opcionales
 * #### Respuesta satisfactoria
-	* Código: 200
-	* Contenido: Lista de alérgenos en formato JSON
+	* Código: 201
+	* Contenido: Plato creado en formato JSON
 
-		_Ejemplo_: ["pescado","gluten"]
+		_Ejemplo_: {"nombre": "puré de patata y gambas","ingredientes": ["patatas","gambas"]}
 * #### Respuestas de error
 	* Código: 400
-	* Contenido: {"errores":{"Nombre":["Causa del error"]}}
+	* Contenido: Listado de errores en formato JSON
 	* Causas de error:
 		* El atributo nombre es necesario
 		* El atributo nombre no existe en la base de datos
 		* El atributo nombre no es un string
 		
+		_Ejemplo_: {"errores": {"nombre": ["El atributo nombre es necesario."],"ingredientes.0": ["Los elementos del atributo ingredientes.0 no pueden estar duplicados"],"ingredientes.1": ["Los elementos del atributo ingredientes.1 no pueden estar duplicados"]}}
 		
 * #### Ejemplo de uso
 	* Llamada
 		```
-		GET localhost:8000/api/obtenerAlergenosDePlato?nombre=merluza a las 3 salsas
+		GET localhost:8000/api/altaPlato?nombre=puré de la casa&ingredientes[0]=patatas&ingredientes[1]=merluza
 		```
 	
 	* Resultado
 		```
-		[
-		    "pescado",
-		    "crustáceos",
-		    "sésamo",
-		    "frutos secos",
-		    "gluten",
-		    "leche",
-		    "mostaza",
-		    "soja",
-		    "sulfitos"
-		]
+		{
+		    "nombre": "puré de la casa",
+		    "ingredientes": [
+			"patatas",
+			"merluza"
+		    ]
+		}
 		```
 		
 * ### Modificar los ingredientes de un plato
@@ -283,14 +268,11 @@ Implementa un pequeño sistema que se componga de:
 	/api/obtenerAlergenosDePlato
 * #### Método
 	GET
-* #### Parametros URL
+* #### Parametros URL o POST
 	* Obligatorios
-		* Nombre=[string]
+		* nombre=[string]
 		
-			_Ejemplo:_ Nombre=Merluza a las 3 salsas
-	* Opcionales
-* #### Parametros de datos POST
-	* Obligatorios
+			_Ejemplo:_ nombre=Merluza a las 3 salsas
 	* Opcionales
 * #### Respuesta satisfactoria
 	* Código: 200
@@ -299,7 +281,7 @@ Implementa un pequeño sistema que se componga de:
 		_Ejemplo_: ["pescado","gluten"]
 * #### Respuestas de error
 	* Código: 400
-	* Contenido: {"errores":{"Nombre":["Causa del error"]}}
+	* Contenido: {"errores":{"nombre":["Causa del error"]}}
 	* Causas de error:
 		* El atributo nombre es necesario
 		* El atributo nombre no existe en la base de datos
