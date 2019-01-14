@@ -25,6 +25,8 @@ Implementa un pequeño sistema que se componga de:
 
 ## Documentación base de datos MySQL
 
+![alt text](https://raw.githubusercontent.com/Ujhik/API_REST_Restaurante/master/base%20datos%20restaurante.PNG?token=AZCm6DqvNupQYmeMOxv1GLJUSxlK_QJnks5cRgrPwA%3D%3D)
+
 ## Documentación API REST
 
 1. [Obtener la lista de alérgenos de un plato](#obtener-la-lista-de-alérgenos-de-un-plato)
