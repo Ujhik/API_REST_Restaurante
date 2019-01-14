@@ -313,7 +313,9 @@ Se valorará positivamente:
 ## Decisiones de diseño
 
 ### Tecnología
-he utilizado __PHP__ y __MySQL__ como figura en el enunciado. He descartado hacer todo el sistema sin framework, debido a que no solo supone más consumo de tiempo sino peores resultados en varias áreas como seguridad, modularidad del código, unidades de testeo, etc...
+He utilizado __PHP__, __MySQL__ y el framework __Laravel__.
+
+He descartado hacer todo el sistema sin framework, debido a que no solo supone más consumo de tiempo sino peores resultados en varias áreas como seguridad, modularidad del código, unidades de testeo, etc...
 
 En cuanto a frameworks he tenido en cuenta varias posibilidades y elegido __Laravel__, ya que cuenta con: soporte para ORM, tests automáticos, migrations, seeders, validación de parámetros en rutas, modelo MVC, una buena documentación, una gran comunidad (es el framework PHP más usado en 2019), seguridad, etc...
  Debido a los requisitos del ejercicio y comparándolo con otros frameworks como __Slim__, __CodeIgniter__, __Symfony__, __Epiphany__, etc... me ha parecido una buena opción.
