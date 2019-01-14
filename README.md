@@ -319,11 +319,11 @@ En cuanto a frameworks he tenido en cuenta varias posibilidades y elegido __Lara
  Debido a los requisitos del ejercicio y comparándolo con otros frameworks como __Slim__, __CodeIgniter__, __Symfony__, __Epiphany__, etc... me ha parecido una buena opción.
 
 Por tanto he utilizado en este proyecto:
-* Migrations: Se puede generar la estructura de la base de datos automáticamente.
-* Seeders: Se puede cargar la base de datos con datos de prueba automáticamente.
-* ORM(Object Relational mapping): El acceso a la base de datos se abstrae a través de un sistema ORM gestionado por laravel y que hace uso de PDO por debajo. 
-* MVC(Modelo Vista Controlador: Laravel hace sencillo dividir siguiendo este patrón.
-* Validación de parámetros: Laravel cuenta con un mecanismo de validación semi-automático que permite validar de forma sencilla controlando los errores y de forma que el código queda muy ordenado y legible.
-* Testeo automático: Laravel cuenta con la funcionalidad para generar unidades de testeo tanto para secciones de código concretas como para funcionalidad de la API REST.
+* __Migrations__: Se puede generar la estructura de la base de datos automáticamente.
+* __Seeders__: Se puede cargar la base de datos con datos de prueba automáticamente.
+* __ORM(Object Relational mapping)__: El acceso a la base de datos se abstrae a través de un sistema ORM gestionado por laravel y que hace uso de PDO por debajo. 
+* __MVC(Modelo Vista Controlador__: Laravel hace sencillo dividir siguiendo este patrón.
+* __Validación de parámetros__: Laravel cuenta con un mecanismo de validación semi-automático que permite validar de forma sencilla controlando los errores y de forma que el código queda muy ordenado y legible.
+* __Testeo automático__: Laravel cuenta con la funcionalidad para generar unidades de testeo tanto para secciones de código concretas como para funcionalidad de la API REST.
 
 ### Arquitectura
