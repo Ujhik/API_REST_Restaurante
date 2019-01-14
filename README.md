@@ -41,7 +41,7 @@ Se valorará positivamente:
 5. [Dar de alta un plato](#dar-de-alta-un-plato)
 6. [Modificar los ingredientes de un plato](#modificar-los-ingredientes-de-un-plato)
 
-* ### Obtener la lista de alérgenos de un plato
+### Obtener la lista de alérgenos de un plato
     
 * #### Ruta
 	/api/obtenerAlergenosDePlato
@@ -88,7 +88,7 @@ Se valorará positivamente:
 		]
 		```
 
-* ### Obtener la lista de platos de un alérgeno
+### Obtener la lista de platos de un alérgeno
     
 * #### Ruta
 	/api/obtenerPlatosDeAlergeno
@@ -128,7 +128,7 @@ Se valorará positivamente:
 		]
 		```
 
-* ### Dar de alta un alérgeno
+### Dar de alta un alérgeno
     
 * #### Ruta
 	/api/altaAlergeno
@@ -167,7 +167,7 @@ Se valorará positivamente:
 		}
 		```
 
-* ### Dar de alta un ingrediente
+### Dar de alta un ingrediente
     
 * #### Ruta
 	/api/altaIngrediente
@@ -212,7 +212,7 @@ Se valorará positivamente:
 		}
 		```
 
-* ### Dar de alta un plato
+### Dar de alta un plato
     
 * #### Ruta
 	/api/altaPlato
@@ -259,7 +259,7 @@ Se valorará positivamente:
 		}
 		```
 		
-* ### Modificar los ingredientes de un plato
+### Modificar los ingredientes de un plato
     
 * #### Ruta
 	/api/modificarIngredientesDePlato
