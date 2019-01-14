@@ -23,6 +23,11 @@ Implementa un pequeño sistema que se componga de:
 * - [x] No será necesario un sistema de usuarios ni roles.
 * - [x] Bonus: Supongamos que un cocinero puede realizar cambios sobre los ingredientes de un plato. Diseña y, si puedes, implementa un sistema para que quede un registro de cambios sobre los platos.
 
+Se valorará positivamente:
+* - [x] Tests automáticos
+* - [x] Seguir principios de clean code
+* - [x] Uso de principios arquitectónicos y patrones para el desacoplamiento entre capas
+
 ## Documentación base de datos MySQL
 
 ![alt text](https://raw.githubusercontent.com/Ujhik/API_REST_Restaurante/master/base%20datos%20restaurante.PNG?token=AZCm6DqvNupQYmeMOxv1GLJUSxlK_QJnks5cRgrPwA%3D%3D)
@@ -308,5 +313,17 @@ Implementa un pequeño sistema que se componga de:
 ## Decisiones de diseño
 
 ### Tecnología
+he utilizado __PHP__ y __MySQL__ como figura en el enunciado. He descartado hacer todo el sistema sin framework, debido a que no solo supone más consumo de tiempo sino peores resultados en varias áreas como seguridad, modularidad del código, unidades de testeo, etc...
+
+En cuanto a frameworks he tenido en cuenta varias posibilidades y elegido __Laravel__, ya que cuenta con: soporte para ORM, tests automáticos, migrations, seeders, validación de parámetros en rutas, modelo MVC, una buena documentación, una gran comunidad (es el framework PHP más usado en 2019), seguridad, etc...
+ Debido a los requisitos del ejercicio y comparándolo con otros frameworks como __Slim__, __CodeIgniter__, __Symfony__, __Epiphany__, etc... me ha parecido una buena opción.
+
+Por tanto he utilizado en este proyecto:
+* Migrations: Se puede generar la estructura de la base de datos automáticamente.
+* Seeders: Se puede cargar la base de datos con datos de prueba automáticamente.
+* ORM(Object Relational mapping): El acceso a la base de datos se abstrae a través de un sistema ORM gestionado por laravel y que hace uso de PDO por debajo. 
+* MVC(Modelo Vista Controlador: Laravel hace sencillo dividir siguiendo este patrón.
+* Validación de parámetros: Laravel cuenta con un mecanismo de validación semi-automático que permite validar de forma sencilla controlando los errores y de forma que el código queda muy ordenado y legible.
+* Testeo automático: Laravel cuenta con la funcionalidad para generar unidades de testeo tanto para secciones de código concretas como para funcionalidad de la API REST.
 
 ### Arquitectura
