@@ -327,5 +327,6 @@ Por tanto he utilizado en este proyecto:
 * __MVC(Modelo Vista Controlador__: Laravel hace sencillo dividir siguiendo este patrón.
 * __Validación de parámetros__: Laravel cuenta con un mecanismo de validación semi-automático que permite validar de forma sencilla controlando los errores y de forma que el código queda muy ordenado y legible.
 * __Testeo automático__: Laravel cuenta con la funcionalidad para generar unidades de testeo tanto para secciones de código concretas como para funcionalidad de la API REST.
+* __CRUD(Create, Read, Update and Delete)__: Me he basado en la plantilla que proporciona Laravel en los controladores para implementarlo de forma estructurada.
 
 ### Arquitectura
