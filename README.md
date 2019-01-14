@@ -4,9 +4,15 @@
     1. [Enunciado prueba de código](#enunciado-prueba-de-código)
 2. [Documentación base de datos MySQL](#documentación-base-de-datos-mysql)
 3. [Documentación API REST](#documentación-api-rest)
+	1. [Obtener la lista de alérgenos de un plato](#obtener-la-lista-de-alérgenos-de-un-plato)
+	2. [Obtener la lista de platos de un alérgeno](#obtener-la-lista-de-platos-de-un-alérgeno)
+	3. [Dar de alta un alérgeno](#dar-de-alta-un-alérgeno)
+	4. [Dar de alta un ingrediente](#dar-de-alta-un-ingrediente)
+	5. [Dar de alta un plato](#dar-de-alta-un-plato)
+	6. [Modificar los ingredientes de un plato](#modificar-los-ingredientes-de-un-plato)
 4. [Decisiones de diseño](#decisiones-de-diseño)
-    1. [Tecnología](#tecnología)
-    2. [Arquitectura](#arquitectura)
+	1. [Tecnología](#tecnología)
+	2. [Arquitectura](#arquitectura)
 
 ## Descripción proyecto
 Este proyecto es la implementación de la siguiente prueba de código, utilizando PHP, MySQL y Laravel:
