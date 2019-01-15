@@ -346,5 +346,8 @@ Por tanto he utilizado en este proyecto:
 #### Capas
 <img src="https://github.com/Ujhik/API_REST_Restaurante/blob/master/documentacion/imagenes/Arquitectura%20capas%20API%20REST.png?raw=true" alt="capas" width="700">
 
-En el diagrama se muestran los archivos/clases en las que se dividen los modelos y controladores. Lo he diseñado así para que, como se ve en el diagrama, haya el menor acoplamiento posible, de forma que cada controlador acceda al menor número posible de modelos.
+* En el diagrama se muestran los archivos/clases en las que se dividen los modelos y controladores. Lo he diseñado así para que, como se ve en el diagrama, haya el menor acoplamiento posible, de forma que cada controlador acceda al menor número posible de modelos.
 
+* PlatosController, IngredientesController y AlergenosController gestionan los CRUD. Actualmente solo cuentan con las funciones de crear debido a que es lo que especifica el enunciado, pero si en un futuro aumentase el sistema se utilizarían para toda la funcionalidad de CRUD.
+
+* He dedicado especial atención a la nomenclatura, para que se pueda entender la mayor parte sin necesidad de comentarios o explicaciones.
