@@ -308,18 +308,18 @@ Se valorará positivamente:
 <img src="https://github.com/Ujhik/API_REST_Restaurante/blob/master/documentacion/imagenes/base%20datos%20restaurante.PNG?raw=true" alt="diseño base de datos" width="700">
 
 Para diseñar el sistema de registro de cambios de ingredientes en platos he analizado y descartado varias posibilidades:
-	* No registrar alérgenos: Descartado porque en caso de que un ingrediente cambie de alérgenos en un futuro, no quedaría el registro. Otra opción sería no permitir en el futuro que los ingredientes cambien de alérgeno, creando ingredientes nuevos, pero la solución más limpia y resistente a posibles borrados de datos es incluir el registro de los alérgenos por ingrediente.
-	* Almacenar ingredientes y alérgenos como campos de tablas con referencias a las tablas de ingredientes y alérgenos. Surgen varios problemas de este enfoque:
-		* La explosión combinacional que se da en caso de que en el futuro los ingredientes puedan tener cambios en los alergenos.
-		* La pesadez de las consultas que va en aumento con el aumento del histórico.
-		* El problema de pérdida de referencias en caso de que en el futuro se borren ingredientes y alérgenos, lo cual se podría solucional añadiendo un campo booleano a las tablas de ingredientes y alérgenos que se llamase borrado, indicando si ese campo se ha borrado o no para no mostrarlo en consultas pero si tenerlo como histórico. Esto me parece, unido a los otros problemas, complicar en exceso el sistema sin una ventaja significativa frente a la solución por la que he optado.
-	* Almacenar las instrucciones de alta y baja de ingredientes. Esto conlleva por cada cambio almacenar muchas tuplas sin que ello ofrezca una ventaja significativa al sistema por el que he optado.
+* No registrar alérgenos: Descartado porque en caso de que un ingrediente cambie de alérgenos en un futuro, no quedaría el registro. Otra opción sería no permitir en el futuro que los ingredientes cambien de alérgeno, creando ingredientes nuevos, pero la solución más limpia y resistente a posibles borrados de datos es incluir el registro de los alérgenos por ingrediente.
+* Almacenar ingredientes y alérgenos como campos de tablas con referencias a las tablas de ingredientes y alérgenos. Surgen varios problemas de este enfoque:
+	* La explosión combinacional que se da en caso de que en el futuro los ingredientes puedan tener cambios en los alergenos.
+	* La pesadez de las consultas que va en aumento con el aumento del histórico.
+	* El problema de pérdida de referencias en caso de que en el futuro se borren ingredientes y alérgenos, lo cual se podría solucional añadiendo un campo booleano a las tablas de ingredientes y alérgenos que se llamase borrado, indicando si ese campo se ha borrado o no para no mostrarlo en consultas pero si tenerlo como histórico. Esto me parece, unido a los otros problemas, complicar en exceso el sistema sin una ventaja significativa frente a la solución por la que he optado.
+* Almacenar las instrucciones de alta y baja de ingredientes. Esto conlleva por cada cambio almacenar muchas tuplas sin que ello ofrezca una ventaja significativa al sistema por el que he optado.
 	
 Al final he decidido crear una tabla de CambiosPlatos. En ella se mantiene una referencia a platos, ya que esta es necesaria puesto que los históricos en el sistema actual y en previsión de futuro siempre dependerán de un plato concreto. En caso de que en el futuro se quieran poder eliminar platos de la lista, se podría hacer un campo booleano de borrado en la tabla platos y no tener esos en cuenta. También tiene un campo datetime para almecenar cuando se ha cambiado el plato, y después un campo de texto en el que se almacenan los ingredientes y sus alérgenos en JSON. El campo se puede hacer JSON para que la base de datos lo valide y aumentar la seguridad, pero como este tipo de dato JSON no es soportado en algunas bases de datos, he decidido hacerlo de texto. Las ventajas que supone este sistema:
-	* Consultas sencillas sin necesidad de joins que elentezcan el sistema.
-	* Una vez que se guarda un histórico, toda la información actual sobre el mismo queda almacenada sin que la modificación de otras tablas perjudique a su integridad.
-	* Es sencillo cambiar el formato de almacenamiento, ya que si en el futuro se quiere por ejemplo añadir o eliminar información, esto no afecta a registros anteriores ni al resto de tablas del sistema.
-	* Su funcionamiento queda aislado y desacoplado del resto del sistema, excepto por la clave foranea a platos, pero se siguen pudiendo utilizar las claves de los ingredientes y alérgenos utilizándolas como referencias, aunque con la precaución de que puede que se encuentren esas referencias en las tablas o no.
+* Consultas sencillas sin necesidad de joins que elentezcan el sistema.
+* Una vez que se guarda un histórico, toda la información actual sobre el mismo queda almacenada sin que la modificación de otras tablas perjudique a su integridad.
+* Es sencillo cambiar el formato de almacenamiento, ya que si en el futuro se quiere por ejemplo añadir o eliminar información, esto no afecta a registros anteriores ni al resto de tablas del sistema.
+* Su funcionamiento queda aislado y desacoplado del resto del sistema, excepto por la clave foranea a platos, pero se siguen pudiendo utilizar las claves de los ingredientes y alérgenos utilizándolas como referencias, aunque con la precaución de que puede que se encuentren esas referencias en las tablas o no.
 
 ### Tecnología
 He utilizado __PHP__, __MySQL__ y el framework __Laravel__.
