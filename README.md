@@ -13,6 +13,8 @@
 4. [Decisiones de diseño](#decisiones-de-diseño)
 	1. [Tecnología](#tecnología)
 	2. [Arquitectura](#arquitectura)
+		1. [Casos de uso](#casos-de-uso)
+		2. [Capas](#capas)
 
 ## Descripción proyecto
 Este proyecto es la implementación de la siguiente prueba de código, utilizando PHP, MySQL y Laravel:
@@ -336,3 +338,9 @@ Por tanto he utilizado en este proyecto:
 * __CRUD(Create, Read, Update and Delete)__: Me he basado en la plantilla que proporciona Laravel en los controladores para implementarlo de forma estructurada.
 
 ### Arquitectura
+
+#### Casos de uso
+<img src="https://github.com/Ujhik/API_REST_Restaurante/blob/master/documentacion/imagenes/Casos%20de%20uso%20API%20REST.png?raw=true" alt="casos de uso" width="400">
+
+#### Capas
+<img src="https://github.com/Ujhik/API_REST_Restaurante/blob/master/documentacion/imagenes/Arquitectura%20capas%20API%20REST.png?raw=true" alt="casos de uso" width="700">
