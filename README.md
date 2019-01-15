@@ -37,8 +37,9 @@ Se valorará positivamente:
 * - [x] Uso de principios arquitectónicos y patrones para el desacoplamiento entre capas
 
 ## Documentación base de datos MySQL
+<img src="https://github.com/Ujhik/API_REST_Restaurante/blob/master/documentacion/imagenes/base%20datos%20restaurante.PNG?raw=true" alt="diseño base de datos" width="700">
 
-![alt text](https://raw.githubusercontent.com/Ujhik/API_REST_Restaurante/master/base%20datos%20restaurante.PNG?token=AZCm6DqvNupQYmeMOxv1GLJUSxlK_QJnks5cRgrPwA%3D%3D)
+
 
 ## Documentación API REST
 
@@ -343,4 +344,4 @@ Por tanto he utilizado en este proyecto:
 <img src="https://github.com/Ujhik/API_REST_Restaurante/blob/master/documentacion/imagenes/Casos%20de%20uso%20API%20REST.png?raw=true" alt="casos de uso" width="400">
 
 #### Capas
-<img src="https://github.com/Ujhik/API_REST_Restaurante/blob/master/documentacion/imagenes/Arquitectura%20capas%20API%20REST.png?raw=true" alt="casos de uso" width="700">
+<img src="https://github.com/Ujhik/API_REST_Restaurante/blob/master/documentacion/imagenes/Arquitectura%20capas%20API%20REST.png?raw=true" alt="capas" width="700">
