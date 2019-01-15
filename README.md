@@ -150,7 +150,7 @@ Se valorará positivamente:
 			_Ejemplo:_ nombre=lactosa
 	* Opcionales
 * #### Respuesta satisfactoria
-	* Código: 200
+	* Código: 201
 	* Contenido: Nombre del alérgeno dado de alta en formato JSON
 
 		_Ejemplo_: {"nombre": "lactosa"}
@@ -201,8 +201,11 @@ Se valorará positivamente:
 	* Contenido: {"errores":{"nombre":["Causa del error"]}}
 	* Causas de error:
 		* El atributo nombre es necesario
-		* El atributo nombre no existe en la base de datos
-		* El atributo nombre no es un string
+		* El atributo nombre ya existe en la base de datos
+		* El atributo <atributo> no es un string
+		* El atributo alergenos debe ser un array
+		* Los elementos del atributo alergenos.i no pueden estar duplicados
+		* El atributo alergenos.i no existe en la base de datos
 		
 		
 * #### Ejemplo de uso
@@ -245,9 +248,12 @@ Se valorará positivamente:
 	* Código: 400
 	* Contenido: Listado de errores en formato JSON
 	* Causas de error:
-		* El atributo nombre es necesario
-		* El atributo nombre no existe en la base de datos
-		* El atributo nombre no es un string
+		* El atributo <atributo> es necesario
+		* El atributo nombre ya existe en la base de datos
+		* El atributo <atributo> no es un string
+		* El atributo ingredientes debe ser un array
+		* Los elementos del atributo ingredientes.i no pueden estar duplicados
+		* El atributo ingredientes.i no existe en la base de datos
 		
 		_Ejemplo_: {"errores": {"nombre": ["El atributo nombre es necesario."],"ingredientes.0": ["Los elementos del atributo ingredientes.0 no pueden estar duplicados"],"ingredientes.1": ["Los elementos del atributo ingredientes.1 no pueden estar duplicados"]}}
 		
@@ -294,10 +300,11 @@ Se valorará positivamente:
 	* Código: 400
 	* Contenido: {"errores":{"nombre":["Causa del error"]}}
 	* Causas de error:
-		* El atributo nombre es necesario
-		* El atributo nombre no existe en la base de datos
-		* El atributo nombre no es un string
-		
+		* El atributo <atributo> es necesario
+		* El atributo <atributo> no existe en la base de datos
+		* El atributo <atributo> no es un string
+		* El atributo ingredientes debe ser un array
+		* Los elementos del atributo ingredientes.i no pueden estar duplicados
 		
 * #### Ejemplo de uso
 	* Llamada
