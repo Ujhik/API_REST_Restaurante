@@ -352,3 +352,6 @@ Por tanto he utilizado en este proyecto:
 
 #### Capas
 <img src="https://github.com/Ujhik/API_REST_Restaurante/blob/master/documentacion/imagenes/Arquitectura%20capas%20API%20REST.png?raw=true" alt="capas" width="700">
+
+En el diagrama se muestran los archivos/clases en las que se dividen los modelos y controladores. Lo he diseñado así para que, como se ve en el diagrama, haya el menor acoplamiento posible entre ambas capas.
+
