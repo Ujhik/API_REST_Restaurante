@@ -351,3 +351,5 @@ Por tanto he utilizado en este proyecto:
 * PlatosController, IngredientesController y AlergenosController gestionan los CRUD. Actualmente solo cuentan con las funciones de crear debido a que es lo que especifica el enunciado, pero si en un futuro aumentase el sistema se utilizarían para toda la funcionalidad de CRUD.
 
 * He dedicado especial atención a la nomenclatura, para que se pueda entender la mayor parte sin necesidad de comentarios o explicaciones.
+
+* No he creado vistas ya que al ser una API REST para servir a una aplicación móvil me ha parecido innecesario.
