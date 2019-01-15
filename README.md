@@ -2,22 +2,22 @@
 
 1. [Descripción proyecto](#descripción-proyecto)
     1. [Enunciado prueba de código](#enunciado-prueba-de-código)
-2. [Documentación base de datos MySQL](#documentación-base-de-datos-mysql)
-3. [Documentación API REST](#documentación-api-rest)
+2. [Documentación API REST](#documentación-api-rest)
 	1. [Obtener la lista de alérgenos de un plato](#obtener-la-lista-de-alérgenos-de-un-plato)
 	2. [Obtener la lista de platos de un alérgeno](#obtener-la-lista-de-platos-de-un-alérgeno)
 	3. [Dar de alta un alérgeno](#dar-de-alta-un-alérgeno)
 	4. [Dar de alta un ingrediente](#dar-de-alta-un-ingrediente)
 	5. [Dar de alta un plato](#dar-de-alta-un-plato)
 	6. [Modificar los ingredientes de un plato](#modificar-los-ingredientes-de-un-plato)
-4. [Decisiones de diseño](#decisiones-de-diseño)
-	1. [Tecnología](#tecnología)
-	2. [Arquitectura](#arquitectura)
+3. [Decisiones de diseño](#decisiones-de-diseño)
+	1. [Base de datos MySQL](#base-de-datos-mysql)
+	2. [Tecnología](#tecnología)
+	3. [Arquitectura](#arquitectura)
 		1. [Casos de uso](#casos-de-uso)
 		2. [Capas](#capas)
 
 ## Descripción proyecto
-Este proyecto es la implementación de la siguiente prueba de código, utilizando PHP, MySQL y Laravel:
+Este proyecto es la implementación de la siguiente prueba de código, utilizando __PHP__, __MySQL__ y __Laravel__:
 
 ### Enunciado prueba de código
 Debido a una nueva legislación, los restaurantes necesitan tener información disponible acerca de los alérgenos que tiene cada plato que sirven. Un plato tiene varios ingredientes, y un ingrediente puede tener varios alérgenos.
@@ -35,10 +35,6 @@ Se valorará positivamente:
 * - [x] Tests automáticos
 * - [x] Seguir principios de clean code
 * - [x] Uso de principios arquitectónicos y patrones para el desacoplamiento entre capas
-
-## Documentación base de datos MySQL
-<img src="https://github.com/Ujhik/API_REST_Restaurante/blob/master/documentacion/imagenes/base%20datos%20restaurante.PNG?raw=true" alt="diseño base de datos" width="700">
-
 
 
 ## Documentación API REST
@@ -69,7 +65,7 @@ Se valorará positivamente:
 		_Ejemplo_: ["pescado","gluten"]
 * #### Respuestas de error
 	* Código: 400
-	* Contenido: {"errores":{"nombre":["Causa del error"]}}
+	* Contenido: {"errores":{"<nombreVariable1>":["Causa del error1"], ...}}
 	* Causas de error:
 		* El atributo nombre es necesario
 		* El atributo nombre no existe en la base de datos
@@ -81,7 +77,6 @@ Se valorará positivamente:
 		```
 		GET localhost:8000/api/obtenerAlergenosDePlato?nombre=merluza a las 3 salsas
 		```
-	
 	* Resultado
 		```
 		[
@@ -116,18 +111,16 @@ Se valorará positivamente:
 		_Ejemplo_: ["merluza a las 3 salsas","tosta de tomate"]
 * #### Respuestas de error
 	* Código: 400
-	* Contenido: {"errores":{"nombre":["Causa del error"]}}
+	* Contenido: {"errores":{"<nombreVariable1>":["Causa del error1"], ...}}
 	* Causas de error:
 		* El atributo nombre es necesario
 		* El atributo nombre no existe en la base de datos
 		* El atributo nombre no es un string
-		
 * #### Ejemplo de uso
 	* Llamada
 		```
 		GET localhost:8000/api/obtenerPlatosDeAlergeno?nombre=leche
 		```
-	
 	* Resultado
 		```
 		[
@@ -136,7 +129,6 @@ Se valorará positivamente:
 		    "revuelto de gambas con merluza"
 		]
 		```
-
 ### Dar de alta un alérgeno
     
 * #### Ruta
@@ -156,26 +148,22 @@ Se valorará positivamente:
 		_Ejemplo_: {"nombre": "lactosa"}
 * #### Respuestas de error
 	* Código: 400
-	* Contenido: {"errores":{"nombre":["Causa del error"]}}
+	* Contenido: {"errores":{"<nombreVariable1>":["Causa del error1"], ...}}
 	* Causas de error:
 		* El atributo nombre es necesario
 		* El atributo nombre no existe en la base de datos
 		* El atributo nombre no es un string
-		
-		
 * #### Ejemplo de uso
 	* Llamada
 		```
 		GET localhost:8000/api/altaAlergeno?nombre=fructosa
 		```
-	
 	* Resultado
 		```
 		{
 		    "nombre": "fructosa"
 		}
 		```
-
 ### Dar de alta un ingrediente
     
 * #### Ruta
@@ -198,7 +186,7 @@ Se valorará positivamente:
 		_Ejemplo_: ["pescado","gluten"]
 * #### Respuestas de error
 	* Código: 400
-	* Contenido: {"errores":{"nombre":["Causa del error"]}}
+	* Contenido: {"errores":{"<nombreVariable1>":["Causa del error1"], ...}}
 	* Causas de error:
 		* El atributo nombre es necesario
 		* El atributo nombre ya existe en la base de datos
@@ -206,14 +194,11 @@ Se valorará positivamente:
 		* El atributo alergenos debe ser un array
 		* Los elementos del atributo alergenos.i no pueden estar duplicados
 		* El atributo alergenos.i no existe en la base de datos
-		
-		
 * #### Ejemplo de uso
 	* Llamada
 		```
 		PUT localhost:8000/api/altaIngrediente?nombre=nueces&alergenos[0]=frutos secos
 		```
-	
 	* Resultado
 		```
 		{
@@ -223,7 +208,6 @@ Se valorará positivamente:
 		    ]
 		}
 		```
-
 ### Dar de alta un plato
     
 * #### Ruta
@@ -246,7 +230,7 @@ Se valorará positivamente:
 		_Ejemplo_: {"nombre": "puré de patata y gambas","ingredientes": ["patatas","gambas"]}
 * #### Respuestas de error
 	* Código: 400
-	* Contenido: Listado de errores en formato JSON
+	* Contenido: {"errores":{"<nombreVariable1>":["Causa del error1"], ...}}
 	* Causas de error:
 		* El atributo <atributo> es necesario
 		* El atributo nombre ya existe en la base de datos
@@ -256,13 +240,11 @@ Se valorará positivamente:
 		* El atributo ingredientes.i no existe en la base de datos
 		
 		_Ejemplo_: {"errores": {"nombre": ["El atributo nombre es necesario."],"ingredientes.0": ["Los elementos del atributo ingredientes.0 no pueden estar duplicados"],"ingredientes.1": ["Los elementos del atributo ingredientes.1 no pueden estar duplicados"]}}
-		
 * #### Ejemplo de uso
 	* Llamada
 		```
 		PUT localhost:8000/api/altaPlato?nombre=puré de la casa&ingredientes[0]=patatas&ingredientes[1]=merluza
 		```
-	
 	* Resultado
 		```
 		{
@@ -273,7 +255,6 @@ Se valorará positivamente:
 		    ]
 		}
 		```
-		
 ### Modificar los ingredientes de un plato
     
 * #### Ruta
@@ -289,7 +270,6 @@ Se valorará positivamente:
 		* ingredientes=[string1,...,stringN]
 			
 			_Ejemplo:_ ingrediente[0]=patatas&ingrediente[1]=gambas&ingrediente[2]=merluza
-		
 	* Opcionales
 * #### Respuesta satisfactoria
 	* Código: 200
@@ -298,20 +278,18 @@ Se valorará positivamente:
 		_Ejemplo_: {"nombre":"patatas cocidas","ingredientes":["tomate", "patatas"]}
 * #### Respuestas de error
 	* Código: 400
-	* Contenido: {"errores":{"nombre":["Causa del error"]}}
+	* Contenido: {"errores":{"<nombreVariable1>":["Causa del error1"], ...}}
 	* Causas de error:
 		* El atributo <atributo> es necesario
 		* El atributo <atributo> no existe en la base de datos
 		* El atributo <atributo> no es un string
 		* El atributo ingredientes debe ser un array
 		* Los elementos del atributo ingredientes.i no pueden estar duplicados
-		
 * #### Ejemplo de uso
 	* Llamada
 		```
 		GET localhost:8000/api/modificarIngredientesDePlato?nombre=merluza a las 3 salsas&ingredientes[0]=salsa vino&ingredientes[1]=merluza&ingredientes[2]=salsa gamba&ingredientes[3]=salsa queso
 		```
-	
 	* Resultado
 		```
 		{
@@ -324,9 +302,12 @@ Se valorará positivamente:
 		    ]
 		}
 		```
-	
-
 ## Decisiones de diseño
+
+### Base de datos MySQL
+<img src="https://github.com/Ujhik/API_REST_Restaurante/blob/master/documentacion/imagenes/base%20datos%20restaurante.PNG?raw=true" alt="diseño base de datos" width="700">
+
+
 
 ### Tecnología
 He utilizado __PHP__, __MySQL__ y el framework __Laravel__.
@@ -337,12 +318,12 @@ En cuanto a frameworks he tenido en cuenta varias posibilidades y elegido __Lara
  Debido a los requisitos del ejercicio y comparándolo con otros frameworks como __Slim__, __CodeIgniter__, __Symfony__, __Epiphany__, etc... me ha parecido una buena opción.
 
 Por tanto he utilizado en este proyecto:
-* __Migrations__: Se puede generar la estructura de la base de datos automáticamente.
-* __Seeders__: Se puede cargar la base de datos con datos de prueba automáticamente.
-* __ORM(Object Relational mapping)__: El acceso a la base de datos se abstrae a través de un sistema ORM gestionado por laravel y que hace uso de PDO por debajo. 
-* __MVC(Modelo Vista Controlador__: Laravel hace sencillo dividir siguiendo este patrón.
+* __Migrations__: En la ruta _database/migrations_ está el código que permite regenerar la base de datos completa de forma automática. Para ejecutar todas es tan fácil como ejecutar _php artisan migrate_.
+* __Seeders__: En la ruta _database/seeds_ está el código que rellena la base de datos con datos de prueba. Para ejecutar todos se ejecuta _php artisan db:seed_.
+* __ORM(Object Relational mapping)__: El acceso a la base de datos se abstrae a través de un sistema ORM gestionado por laravel y que hace uso de PDO por debajo. El código se encuentra en _app/model_, y en el se definel las relaciones de 1:N y N:M.
+* __MVC(Modelo Vista Controlador__: Laravel hace sencillo dividir siguiendo este patrón, por lo que he seguido su esquema.
 * __Validación de parámetros__: Laravel cuenta con un mecanismo de validación semi-automático que permite validar de forma sencilla controlando los errores y de forma que el código queda muy ordenado y legible.
-* __Testeo automático__: Laravel cuenta con la funcionalidad para generar unidades de testeo tanto para secciones de código concretas como para funcionalidad de la API REST.
+* __Testeo automático__: Con PhpUnit, el código se encuentra en _tests/feature_. He generado un archivo por cada endpoint, con una función para funcionamiento correcto y otra para fallos de parámetros. En total 61 assertions, comprobando también que la base de datos se gestione correctamente.
 * __CRUD(Create, Read, Update and Delete)__: Me he basado en la plantilla que proporciona Laravel en los controladores para implementarlo de forma estructurada.
 
 ### Arquitectura
@@ -353,5 +334,5 @@ Por tanto he utilizado en este proyecto:
 #### Capas
 <img src="https://github.com/Ujhik/API_REST_Restaurante/blob/master/documentacion/imagenes/Arquitectura%20capas%20API%20REST.png?raw=true" alt="capas" width="700">
 
-En el diagrama se muestran los archivos/clases en las que se dividen los modelos y controladores. Lo he diseñado así para que, como se ve en el diagrama, haya el menor acoplamiento posible entre ambas capas.
+En el diagrama se muestran los archivos/clases en las que se dividen los modelos y controladores. Lo he diseñado así para que, como se ve en el diagrama, haya el menor acoplamiento posible, de forma que cada controlador acceda al menor número posible de modelos.
 
