@@ -65,7 +65,7 @@ Se valorará positivamente:
 		_Ejemplo_: ["pescado","gluten"]
 * #### Respuestas de error
 	* Código: 400
-	* Contenido: {"errores":{"<nombreVariable1>":["Causa del error1"], ...}}
+	* Contenido: {"errores":{"nombreVariable1":["Causa del error1"], ...}}
 	* Causas de error:
 		* El atributo nombre es necesario
 		* El atributo nombre no existe en la base de datos
@@ -111,7 +111,7 @@ Se valorará positivamente:
 		_Ejemplo_: ["merluza a las 3 salsas","tosta de tomate"]
 * #### Respuestas de error
 	* Código: 400
-	* Contenido: {"errores":{"<nombreVariable1>":["Causa del error1"], ...}}
+	* Contenido: {"errores":{"nombreVariable1":["Causa del error1"], ...}}
 	* Causas de error:
 		* El atributo nombre es necesario
 		* El atributo nombre no existe en la base de datos
@@ -148,7 +148,7 @@ Se valorará positivamente:
 		_Ejemplo_: {"nombre": "lactosa"}
 * #### Respuestas de error
 	* Código: 400
-	* Contenido: {"errores":{"<nombreVariable1>":["Causa del error1"], ...}}
+	* Contenido: {"errores":{"nombreVariable1":["Causa del error1"], ...}}
 	* Causas de error:
 		* El atributo nombre es necesario
 		* El atributo nombre no existe en la base de datos
@@ -186,7 +186,7 @@ Se valorará positivamente:
 		_Ejemplo_: ["pescado","gluten"]
 * #### Respuestas de error
 	* Código: 400
-	* Contenido: {"errores":{"<nombreVariable1>":["Causa del error1"], ...}}
+	* Contenido: {"errores":{"nombreVariable1":["Causa del error1"], ...}}
 	* Causas de error:
 		* El atributo nombre es necesario
 		* El atributo nombre ya existe en la base de datos
@@ -230,7 +230,7 @@ Se valorará positivamente:
 		_Ejemplo_: {"nombre": "puré de patata y gambas","ingredientes": ["patatas","gambas"]}
 * #### Respuestas de error
 	* Código: 400
-	* Contenido: {"errores":{"<nombreVariable1>":["Causa del error1"], ...}}
+	* Contenido: {"errores":{"nombreVariable1":["Causa del error1"], ...}}
 	* Causas de error:
 		* El atributo <atributo> es necesario
 		* El atributo nombre ya existe en la base de datos
@@ -278,7 +278,7 @@ Se valorará positivamente:
 		_Ejemplo_: {"nombre":"patatas cocidas","ingredientes":["tomate", "patatas"]}
 * #### Respuestas de error
 	* Código: 400
-	* Contenido: {"errores":{"<nombreVariable1>":["Causa del error1"], ...}}
+	* Contenido: {"errores":{"nombreVariable1":["Causa del error1"], ...}}
 	* Causas de error:
 		* El atributo <atributo> es necesario
 		* El atributo <atributo> no existe en la base de datos
